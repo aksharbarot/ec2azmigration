@@ -56,7 +56,7 @@
       when: ec2_facts.instances[0].state.name == "stopped"
 
     - ec2:
-        key_name: win_2019_p
+        key_name: test-key
         instance_type: "{{ moffering }}"
         image: "{{ test1.image_id }}"
         wait: yes
