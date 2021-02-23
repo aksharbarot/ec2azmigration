@@ -7,7 +7,7 @@ BLUE="\033[0;34m"
 Yellow='\033[0;33m'
 Cyan='\033[0;36m'
 
-echo -e "${BLUE}**************AWS Environment*****************${NOCOLOR}"
+echo -e "${BLUE}**************AWS*****************${NOCOLOR}"
 echo ""
 
 echo -e "${GREEN}AWS EC2 AZ Migration Script${NOCOLOR}"
