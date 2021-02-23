@@ -20,7 +20,7 @@
       debug:
               var: ec2_facts | json_query('instances[].security_groups[].group_name')
 
-    - local_action: shell aws --profile svc_virtualizationAdm ec2 describe-instances --instance-ids "{{ ecid }}" | jq -r '.[][]|.Instances[].NetworkInterfaces[].Groups[].GroupName' > /tmp/secgroups && sed ':b;$!{N;bb};s/\n/,/g' /tmp/secgroups
+    - local_action: shell aws --profile myaccesskey ec2 describe-instances --instance-ids "{{ ecid }}" | jq -r '.[][]|.Instances[].NetworkInterfaces[].Groups[].GroupName' > /tmp/secgroups && sed ':b;$!{N;bb};s/\n/,/g' /tmp/secgroups
       register: testaxar
       when: ec2_facts.instances[0].state.name == 'stopped'
 
